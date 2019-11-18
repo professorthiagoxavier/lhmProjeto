@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+var endpoint = "https://localhost:44366/api/"; //inserir o host gerado.
+$(document).ready(function(){
+   //botão inserir
+   /* $("#btnInserir").click(function(){
+	   var produto = {
+				nome: $("#txtNome").val()
+	   };
+	   
+	   $.ajax({
+			url: endpoint + "produto",
+			type: 'post', 
+			contentType: 'application/json',
+			data: JSON.stringify(produto),
+			success: function(data){
+				alert(data); //alert é bem feio, mas como usaremos para teste, servirá. =)
+			}
+	   });
+   });
+   
+   //atualizar
+   $("#btnAtualizar").click(function(){
+	   var produto = {
+				name: $("#txtNomeEdit").val(), 
+				id : $("#txtIdEdit").val()
+	   }; //json para enviar para API
+	   
+	   $.ajax({
+			url: endpoint + "produto",
+			type: 'put', //atualizar
+			contentType: 'application/json',
+			data: JSON.stringify(produto),
+			success: function(data){
+				alert(data); //alert é bem feio, mas como usaremos para teste, servirá. =)
+			}
+	   });
+   });
+   //fim botão atualizar
+   
+   //btnDelete
+  $("#btnExcluir").click(function(){ 
+		$.ajax({
+			url: endpoint + "produto/" + $("#txtDelete").val(),
+			type: 'delete', //deletar
+			success: function(data){
+				alert(data); 
+			}
+		});
+  });
+  
+  //get by id
+  $("#btnGetById").click(function(){ 
+		$.get(endpoint + "produto/GetProdutoById/" + $("#txtGetById").val(),function(data){
+		  	$("#txtGetText").val(data.nome);
+	   });	
+				
+  });*/
+  
+  // get all produto
+   $.get(endpoint + "discos",function(data){
+	   
+	   $.each(data, function(i, item){
+			console.log(item);
+		
+		
+		
+		$("#discoBody").append("<tr>");
+				$("#discoBody").append("<td>" + item.Cantor + "</td>");
+				$("#discoBody").append("<td>" + item.Nome + "</td>");
+				$("#discoBody").append("<td>" + item.Genero + "</td>");
+			$("#discoBody").append("</tr>");
+		});
+   });
+  
+  
+});
+</script>
+</head>
+<body>
+
+<table border=1>
+		<thead>
+			<tr>
+				<th> Cantor </th>
+				<th> Nome</th>
+				<th>Genero<th>
+			</tr>
+		</thead>
+		<tbody id="discoBody">
+		
+		</tbody>
+	</table>
+
+
+    <h2> Exemplo insert </h2>
+	<p><input type="text" id="txtNome" /> </p>
+	<input type="button" value="inserir" id="btnInserir" />
+
+	<h2> Exemplo update </h2>
+	<p> <input type="hidden" id="txtIdEdit" value="1" /> </p>
+	<p><input type="text" id="txtNomeEdit" /> </p>
+	<input type="button" value="Atualizar" id="btnAtualizar" />
+
+	<h2> Exemplo delete </h2>
+	<p> <input type="hidden" id="txtDelete" value="1" /> </p>
+	<input type="button" value="Excluir" id="btnExcluir" />
+	
+	<h2> Exemplo Get By Id </h2>
+	<p> <input type="text" id="txtGetById" value="1" /> </p>
+	<p> <input type="text" id="txtGetText" /> </p>
+	<input type="button" value="Recuperar" id="btnGetById" />
+
+
+	<h2> Exemplo GetAll produtos </h2>
+	<table>
+		<thead>
+			<tr>
+				<th> Id </th>
+				<th> Nome</th>
+			</tr>
+		</thead>
+		<tbody id="produtoBody">
+		
+		</tbody>
+	</table>
+
+</body>
+</html>

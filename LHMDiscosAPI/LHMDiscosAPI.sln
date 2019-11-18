@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29503.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LHMDiscosAPI", "LHMDiscosAPI\LHMDiscosAPI.csproj", "{B1E7903E-3BBF-474E-91DA-408BC86B11FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1E7903E-3BBF-474E-91DA-408BC86B11FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1E7903E-3BBF-474E-91DA-408BC86B11FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1E7903E-3BBF-474E-91DA-408BC86B11FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1E7903E-3BBF-474E-91DA-408BC86B11FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {81330C67-EE75-4666-B707-08CFFC497643}
+	EndGlobalSection
+EndGlobal
